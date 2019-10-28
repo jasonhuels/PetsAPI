@@ -10,6 +10,7 @@ namespace EpicodusPets.Models
         }
 
         public DbSet<Pet> Pets { get; set; }
+        public DbSet<Photo> Photos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

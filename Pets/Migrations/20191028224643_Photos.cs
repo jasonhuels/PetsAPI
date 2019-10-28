@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Pets.Migrations
 {
-    public partial class seedit : Migration
+    public partial class Photos : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,6 +28,26 @@ namespace Pets.Migrations
                     table.PrimaryKey("PK_Pets", x => x.PetId);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Photo",
+                columns: table => new
+                {
+                    PhotoId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    PetId = table.Column<int>(nullable: false),
+                    Url = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Photo", x => x.PhotoId);
+                    table.ForeignKey(
+                        name: "FK_Photo_Pets_PetId",
+                        column: x => x.PetId,
+                        principalTable: "Pets",
+                        principalColumn: "PetId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "Pets",
                 columns: new[] { "PetId", "Age", "Breed", "Description", "FavoriteThings", "Gender", "LeastFavoriteThings", "Name", "Owner", "Species" },
@@ -44,10 +64,18 @@ namespace Pets.Migrations
                     { 9, 4, "Australian Cattledog", "Wren is a red heeler that loves to pick on other dogs", "Wren loves chasing her favorite toy at the park, she loves belly rubs, and cheese.", "Female", "Rain and being told what to do", "Wren", "Chris", "Dog" },
                     { 10, 2, "Australian Shepherd", "Ridiculously fluffy and adorable, and knows it", "All squeeky toys.", "Female", "Limes", "Molly", "Christine", "Dog" }
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Photo_PetId",
+                table: "Photo",
+                column: "PetId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Photo");
+
             migrationBuilder.DropTable(
                 name: "Pets");
         }

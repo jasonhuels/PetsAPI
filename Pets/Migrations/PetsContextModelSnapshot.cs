@@ -175,6 +175,30 @@ namespace Pets.Migrations
                             Species = "Dog"
                         });
                 });
+
+            modelBuilder.Entity("EpicodusPets.Models.Photo", b =>
+                {
+                    b.Property<int>("PhotoId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("PetId");
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("PhotoId");
+
+                    b.HasIndex("PetId");
+
+                    b.ToTable("Photo");
+                });
+
+            modelBuilder.Entity("EpicodusPets.Models.Photo", b =>
+                {
+                    b.HasOne("EpicodusPets.Models.Pet", "Pet")
+                        .WithMany("Photos")
+                        .HasForeignKey("PetId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
 #pragma warning restore 612, 618
         }
     }

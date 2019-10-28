@@ -1,7 +1,13 @@
+using System.Collections.Generic;
+
 namespace EpicodusPets.Models
 {
     public class Pet
     {
+        public Pet()
+        {
+            this.Photos = new HashSet<Photo>();
+        }
         public int PetId { get; set; }
         public string Name { get; set; }
         public string Species { get; set; }
@@ -12,5 +18,6 @@ namespace EpicodusPets.Models
         public string FavoriteThings { get; set; }
         public string LeastFavoriteThings { get; set; }
         public string Owner { get; set; }
+        public virtual ICollection<Photo> Photos { get; set; }
     }
 }

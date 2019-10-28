@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Pets.Migrations
 {
     [DbContext(typeof(PetsContext))]
-    [Migration("20191028203001_seedit")]
-    partial class seedit
+    [Migration("20191028224643_Photos")]
+    partial class Photos
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -176,6 +176,30 @@ namespace Pets.Migrations
                             Owner = "Christine",
                             Species = "Dog"
                         });
+                });
+
+            modelBuilder.Entity("EpicodusPets.Models.Photo", b =>
+                {
+                    b.Property<int>("PhotoId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("PetId");
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("PhotoId");
+
+                    b.HasIndex("PetId");
+
+                    b.ToTable("Photo");
+                });
+
+            modelBuilder.Entity("EpicodusPets.Models.Photo", b =>
+                {
+                    b.HasOne("EpicodusPets.Models.Pet", "Pet")
+                        .WithMany("Photos")
+                        .HasForeignKey("PetId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
