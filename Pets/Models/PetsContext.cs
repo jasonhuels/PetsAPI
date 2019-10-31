@@ -44,10 +44,16 @@ namespace EpicodusPets.Models
                     new Pet { PetId = 14, Name = "Kima", Species = "Dog", Breed = "Coonhound/Lab", Age = 3, Gender = "Female", Description = "The best dog ever", FavoriteThings = "hikes", LeastFavoriteThings = "shower", Owner = "Joel", PhotoPath = "wwwroot/uploads/kima-joel.jpg" },
 
                     new Pet { PetId = 15, Name = "Ashford", Species = "Cat", Breed = "Domestic short hair", Age = 6, Gender = "Male", Description = "Has an adorable moustache", FavoriteThings = "sleeping", LeastFavoriteThings = "screaming toddlers", Owner = "Anita", PhotoPath = "wwwroot/uploads/ashford-anita.jpg" },
-                    
+
                     new Pet { PetId = 16, Name = "Jasper", Species = "Cat", Breed = "Mixed Breed Maine Coon", Age = 2, Gender = "Male", Description = "Very sassy when restless but irresistably cute when sleepy", FavoriteThings = "Paper bags, boxes, being gently stroked on the nose while falling asleep", LeastFavoriteThings = "Sylvie", Owner = "Will (Jacqueline's roommate)", PhotoPath = "wwwroot/uploads/jasper-jacqueline.jpg" },
 
-                    new Pet { PetId = 17, Name = "Levi", Species = "Dog", Breed = "Dachshund mix", Age = 5, Gender = "Male", Description = "#1 Handsy Boy", FavoriteThings = "Wearing clothes and playing with the hose", LeastFavoriteThings = "strangers, other dogs playing with his toys", Owner = "Joey (Jason's brother)", PhotoPath = "wwwroot/uploads/levi-jason.jpg" }
+                    new Pet { PetId = 17, Name = "Levi", Species = "Dog", Breed = "Dachshund mix", Age = 5, Gender = "Male", Description = "#1 Handsy Boy", FavoriteThings = "Wearing clothes and playing with the hose", LeastFavoriteThings = "strangers, other dogs playing with his toys", Owner = "Joey (Jason's brother)", PhotoPath = "wwwroot/uploads/levi-jason.jpg" },
+
+                    new Pet { PetId = 18, Name = "Meeko", Species = "Cat", Breed = "Mancoon, taby mix", Age = 8, Gender = "Male", Description = "Snuggly pur-box", FavoriteThings = "Catnip, food and cuddles", LeastFavoriteThings = "Other pets that steal the love he should be getting", Owner = "Hailey", PhotoPath = "wwwroot/uploads/meeko-hailey.jpg" },
+
+                    new Pet { PetId = 19, Name = "Ladybird", Species = "Dog", Breed = " Golden Retriever", Age = 7, Gender = "Female", Description = "Such a love, very demanding with being loved on", FavoriteThings = "She loves to bring you gifts when you get home like my socks", LeastFavoriteThings = "Other dogs..", Owner = "Hailey", PhotoPath = "wwwroot/uploads/ladybird-hailey.jpg" },
+
+                    new Pet { PetId = 20, Name = "Ebba Beryl", Species = "Dog", Breed = "Great Pyrenees", Age = 1, Gender = "Female", Description = "Huge white fully baby", FavoriteThings = "Loves the snow and to be outside with other animals", LeastFavoriteThings = "Water", Owner = "Hailey", PhotoPath = "wwwroot/uploads/ebba-beryl-hailey.jpg" }
                 );
         }
     }
